@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OgramCloud-Test-Client</title>
+</head>
+<body>
+
+    <h1>MON IMAGE [CHAT VENERE]</h1>
+    <img id="img_target" src=""/>
+    <hr>
+    <img id="img_target2" src="">
+
+</body>
+
+<script>
+    const url = "https://ogramcloud.com/api/file/";
+    const loadImg = (id, fileKey) => {
+        // ping
+        document.getElementById(id).src = url + fileKey;
+        setTimeout(() => {
+            // pong
+            document.getElementById(id).src = url + fileKey;
+        }, 1000);
+    }
+    loadImg("img_target", "846544e9280ab4e9c63e5be8b4249b81");
+    loadImg("img_target2", "970084e3b891949218468b8c598d98a9");
+
+</script>
+
+</html>
