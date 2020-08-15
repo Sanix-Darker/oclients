@@ -26,8 +26,9 @@
         <title>PHP upload to OgramCloud</title>
     </head>
     <body>
+        <h1>OgramCloud PHP-Client</h1>
         <form action="" method="post">
-            <input type="text" name="chat_id">
+            <input type="text" name="chat_id"><br/>
             <input type="file" name="file" >
             <input type="submit" value="Envoyer">
         </form>
