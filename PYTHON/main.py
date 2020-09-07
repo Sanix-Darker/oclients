@@ -1,21 +1,22 @@
-import requests
-import json
+# main client
+import argparse
+from .settings import CHAT_ID, HOST_URL
+from .utils import proceed
 
-url = "https://ogramcloud.com/api/upload"
 
-files = {
-    "file": open("./c1.jpg", "rb")
-}
-values = {
-    "chat_id": "267092256"
-}
+if __name__ == "__main__":
+    # Initialize the arguments
+    # Example command :
+    # 
+    prs = argparse.ArgumentParser()
+    prs.add_argument('-f', '--filepath', 
+                        help='File path of the file we want to upload', type=str)
+    prs.add_argument('-c', '--chatid', 
+                        help='Chat Id on Telegram account, see documentation of (https://ogramcloud.com)', 
+                        type=str, default=CHAT_ID)
+    prs.add_argument('-h', '--hosturl', 
+                        help='The host of OgramCloud', 
+                        type=str, default=HOST_URL)
+    prs = prs.parse_args()
 
-r = requests.post(url, files=files, data=values)
-
-content = r.content.decode()
-
-print("[+] content: ", content)
-print("-" * 15)
-
-print("[+] file_key: ", json.loads(content)["file_key"])
-# 846544e9280ab4e9c63e5be8b4249b81
+    proceed(prs.filepath, prs.hosturl, prs.chatid)

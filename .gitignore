@@ -3,3 +3,6 @@
 .vscode
 .idea
 PHP/uploads/*
+*config.txt
+*__pycache__
+*.pyc
