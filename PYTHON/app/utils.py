@@ -35,8 +35,8 @@ def getFile(oid: str, host_url: str):
 
     if info["status"] == "success":
         print("[+] Getting file " + info["file_name"] + "...")
-        print("[+] Chunks : " + info["chunks"])
-        
+        print("[+] Chunks : " + str(info["chunks"]))
+
         print("[+] Downloading your file...")
 
         r2 = requests.get(host_url + "/api/file/" + oid)
